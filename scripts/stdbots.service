@@ -1,0 +1,15 @@
+[Unit]
+Description=StdGameBot Telegram Service
+After=network.target mongodb.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/stdgamebot
+ExecStart=/opt/stdgamebot/bin/bot
+Restart=always
+RestartSec=5
+EnvironmentFile=/opt/stdgamebot/.env
+
+[Install]
+WantedBy=multi-user.target
