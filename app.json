@@ -1,0 +1,67 @@
+{
+  "name": "StdGameBot",
+  "description": "High-Performance Concurrency Telegram Mini-Games and Multiplayer Duel Bot built in Go. Tic-Tac-Toe, Rock-Paper-Scissors, Casino Slots, Dice, Number Guessing, Wallet, XP Leaderboards, and Daily Rewards.",
+  "repository": "https://github.com/StdBots/StdGameBot",
+  "logo": "https://graph.org/file/00ea4effe5d2dfbb8d5be.jpg",
+  "keywords": [
+    "telegram",
+    "bot",
+    "golang",
+    "game",
+    "tictactoe",
+    "casino",
+    "slots",
+    "dice",
+    "leaderboard",
+    "mongodb",
+    "stdbots",
+    "std-deepanshu"
+  ],
+  "stack": "container",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
+      "required": true
+    },
+    "ADMIN_IDS": {
+      "description": "Comma-separated list of Telegram Admin User IDs",
+      "value": "7394590844",
+      "required": false
+    },
+    "MONGO_URI": {
+      "description": "MongoDB Connection String (Atlas or standalone)",
+      "required": true
+    },
+    "DB_NAME": {
+      "description": "Database Name",
+      "value": "stdgamebot_db",
+      "required": false
+    },
+    "DAILY_REWARD": {
+      "description": "Daily free coins amount",
+      "value": "500",
+      "required": false
+    },
+    "STARTING_COINS": {
+      "description": "Initial free coins granted on first registration",
+      "value": "1000",
+      "required": false
+    },
+    "MAX_BET": {
+      "description": "Maximum wager allowed per game",
+      "value": "50000",
+      "required": false
+    },
+    "ENV": {
+      "description": "Runtime Environment",
+      "value": "production",
+      "required": false
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}
